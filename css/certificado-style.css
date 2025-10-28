@@ -1,0 +1,331 @@
+/* === ESTILO SEGURO Y OFICIAL PARA CERTIFICADO - ITSaBOT === */
+
+:root {
+  /* Paleta de colores */
+  --lime-glow: #A5EC60;
+  --natural-green: #419310;
+  --deep-green: #1C621B;
+  --grayish-teal: #487070;
+  --petrol-blue: #18333D;
+  --dark-blue-bg: #0B1E26;
+  --text-light: #E0E6E8;
+
+  /* Tipografía */
+  --font-main: 'Poppins', 'Inter', system-ui, sans-serif;
+
+  /* Radios y Sombras */
+  --radius-lg: 20px;
+  --radius-md: 12px;
+  --panel-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* --- RESET BÁSICO Y CONFIGURACIÓN DEL BODY --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-light);
+  background-color: var(--dark-blue-bg);
+  /* Fondo oscuro con patrón de líneas sutil */
+  background-image: linear-gradient(45deg, var(--petrol-blue) 25%, transparent 25%, transparent 75%, var(--petrol-blue) 75%, var(--petrol-blue)),
+                    linear-gradient(45deg, var(--petrol-blue) 25%, transparent 25%, transparent 75%, var(--petrol-blue) 75%, var(--petrol-blue));
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- HEADER Y FOOTER INTEGRADOS --- */
+.site-header {
+  background: rgba(11, 30, 38, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(72, 112, 112, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+.site-header .container,
+.site-footer .container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.logo {
+  height: 36px;
+  filter: drop-shadow(0 0 8px rgba(165, 236, 96, 0.3));
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.main-nav a:hover {
+  color: var(--lime-glow);
+}
+
+.site-footer {
+  padding: 2rem 0;
+  margin-top: auto;
+  background: transparent;
+  text-align: center;
+}
+.site-footer small {
+  color: var(--grayish-teal);
+  font-size: 0.875rem;
+}
+
+/* --- CONTENIDO PRINCIPAL Y PANEL SEGURO --- */
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.secure-panel {
+  background: var(--petrol-blue);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--panel-shadow);
+  border: 1px solid var(--grayish-teal);
+  position: relative;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* Borde superior con gradiente luminoso */
+.secure-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--lime-glow), var(--natural-green));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: 0 0 12px rgba(165, 236, 96, 0.5);
+}
+
+.secure-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--dark-blue-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -5.5rem auto 1.5rem auto;
+  border: 4px solid var(--petrol-blue);
+  color: var(--lime-glow);
+  font-size: 1.75rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.intro {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--lime-glow);
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  background: var(--dark-blue-bg);
+  border: 1px solid var(--grayish-teal);
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  font-family: var(--font-main);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--lime-glow);
+  box-shadow: 0 0 0 3px rgba(165, 236, 96, 0.2);
+}
+
+input:disabled {
+  background: rgba(72, 112, 112, 0.3);
+  color: rgba(224, 230, 232, 0.6);
+  cursor: not-allowed;
+}
+
+.btn.request {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, var(--lime-glow), var(--natural-green));
+  color: var(--dark-blue-bg);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.btn.request:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(165, 236, 96, 0.4);
+}
+
+.info-box {
+  background: rgba(24, 51, 61, 0.7);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--grayish-teal);
+  text-align: center;
+}
+
+.info-box h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-box p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* ======================================================= */
+/* === ESTILOS PARA MENÚ HAMBURGUESA Y NAVEGACIÓN MÓVIL === */
+/* ======================================================= */
+
+.menu-toggle {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background: var(--text-light);
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--text-light);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
+
+.main-nav.active + .menu-toggle .hamburger {
+  background: transparent;
+}
+.main-nav.active + .menu-toggle .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.main-nav.active + .menu-toggle .hamburger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    background: var(--dark-blue-bg); /* Fondo oscuro y sólido */
+    backdrop-filter: none; /* Se elimina el desenfoque innecesario */
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1000;
+    padding: 6rem 2rem 2rem;
+  }
+
+  .main-nav.active {
+    transform: translateX(0);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
